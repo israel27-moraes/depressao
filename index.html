@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depressão nos Jovens</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #6b9ac4;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .content {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #6b9ac4;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        .helplines {
+            background-color: #e9f7fd;
+            padding: 15px;
+            border: 1px solid #b4d8e7;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .helplines p {
+            margin: 0 0 10px;
+        }
+        footer {
+            background-color: #6b9ac4;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+        .credits-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #fff;
+            color: #6b9ac4;
+            border: 1px solid #6b9ac4;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Depressão nos Jovens</h1>
+        <button class="credits-button" onclick="document.getElementById('creditsModal').style.display='block'">Créditos</button>
+    </header>
+    <div class="content">
+        <h2>O que é Depressão?</h2>
+        <p>A depressão é uma condição de saúde mental comum, mas séria, que afeta milhões de jovens em todo o mundo. É caracterizada por sentimentos persistentes de tristeza, perda de interesse em atividades antes prazerosas, e pode afetar negativamente o desempenho diário.</p>
+
+        <h2>Sintomas da Depressão</h2>
+        <ul>
+            <li>Tristeza persistente</li>
+            <li>Perda de interesse ou prazer em atividades</li>
+            <li>Alterações no apetite e no peso</li>
+            <li>Dificuldade para dormir ou excesso de sono</li>
+            <li>Fadiga ou falta de energia</li>
+            <li>Sentimentos de inutilidade ou culpa excessiva</li>
+            <li>Dificuldade de concentração</li>
+            <li>Pensamentos de morte ou suicídio</li>
+        </ul>
+
+        <h2>Dicas para Superar a Depressão</h2>
+        <ul>
+            <li>Converse com Alguém: Falar com um amigo, familiar ou profissional de saúde pode ajudar a reduzir o sentimento de isolamento.</li>
+            <li>Pratique Atividades Físicas: Exercícios físicos liberam endorfinas, que podem melhorar o humor.</li>
+            <li>Mantenha uma Rotina: Estabeleça uma rotina diária para ajudar a trazer um senso de normalidade e propósito.</li>
+            <li>Evite o Álcool e Drogas: Substâncias podem piorar os sintomas de depressão.</li>
+            <li>Durma Bem: Priorize um sono de qualidade para restaurar a energia e o bem-estar.</li>
+            <li>Envolva-se em Atividades Sociais: Participar de atividades sociais pode ajudar a aumentar o apoio emocional.</li>
+            <li>Busque Hobbies: Encontre atividades que lhe tragam prazer e distração.</li>
+        </ul>
+
+        <h2>Números para Buscar Ajuda</h2>
+        <div class="helplines">
+            <p><strong>Centro de Valorização da Vida (CVV):</strong> Ligue 188 ou acesse <a href="https://www.cvv.org.br">www.cvv.org.br</a></p>
+            <p><strong>SAMU:</strong> Ligue 192</p>
+            <p><strong>CAPS (Centro de Atenção Psicossocial):</strong> Consulte a unidade mais próxima na sua cidade.</p>
+        </div>
+    </div>
+    <footer>
+        <p>© 2024 Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Modal -->
+    <div id="creditsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('creditsModal').style.display='none'">&times;</span>
+            <p>Olá, meu nome é Israel de Moraes, tenho 15 anos e moro em SC, Joinville para ser mais exato, sou cristão e estou fazendo o ensino-médio.</p>
+        </div>
+    </div>
+
+    <script>
+        // Fechar o modal ao clicar fora dele
+        window.onclick = function(event) {
+            var modal = document.getElementById('creditsModal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
